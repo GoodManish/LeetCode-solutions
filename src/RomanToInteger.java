@@ -28,40 +28,49 @@
    Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.
    */
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class RomanToInteger {
 
     public static void main(String[] args) {
         RomanToInteger romanToInteger = new RomanToInteger();
-        romanToInteger.romanToInt("MCMXCIV");
+        System.out.println(romanToInteger.romanToInt("III"));
+//        System.out.println(romanToInteger.romanToInt("IV"));
+//        System.out.println(romanToInteger.romanToInt("LVIII"));
+//        System.out.println(romanToInteger.romanToInt("MCMXCIV"));
     }
 
     public int romanToInt(String s) {
-        Map<String, Integer> map = getMap();
-        String previous;
-        String[] split = s.split("");
-        for (String str : split) {
-            previous = str;
-            Integer integer = map.get(str);
+        if(s==null || s.length()==0){
+            return 0;
+        }
+        Map<Character, Integer> map = getMap();
 
+        int length = s.length() - 1;
+        int result = map.get(s.charAt(s.length() - 1));
+
+        for (int i = length - 2; i >= 0; i--) {
+            if(map.get(s.charAt(i)) >= map.get(s.charAt(i+1))){
+                result = result + map.get(s.charAt(i));
+
+            }else{
+                result = map.get(s.charAt(i+1)) - result;
+            }
         }
 
-        return 0;
+        return result;
     }
 
-    public static Map<String, Integer> getMap() {
-        Map<String, Integer> map = new HashMap();
-        map.put("I", 1);
-        map.put("V", 5);
-        map.put("X", 10);
-        map.put("L", 50);
-        map.put("C", 100);
-        map.put("D", 500);
-        map.put("M", 1000);
+    public static Map<Character, Integer> getMap() {
+        Map<Character, Integer> map = new HashMap();
+        map.put('I', 1);
+        map.put('V', 5);
+        map.put('X', 10);
+        map.put('L', 50);
+        map.put('C', 100);
+        map.put('D', 500);
+        map.put('M', 1000);
         return map;
     }
 }
