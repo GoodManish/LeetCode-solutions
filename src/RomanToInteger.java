@@ -41,24 +41,20 @@ public class RomanToInteger {
 //        System.out.println(romanToInteger.romanToInt("MCMXCIV"));
     }
 
-    public int romanToInt(String s) {
+public int romanToInt(String s) {
         if(s==null || s.length()==0){
             return 0;
         }
         Map<Character, Integer> map = getMap();
-
-        int length = s.length() - 1;
         int result = map.get(s.charAt(s.length() - 1));
 
-        for (int i = length - 2; i >= 0; i--) {
+        for (int i = s.length()-2; i >= 0; i--) {
             if(map.get(s.charAt(i)) >= map.get(s.charAt(i+1))){
                 result = result + map.get(s.charAt(i));
-
             }else{
-                result = map.get(s.charAt(i+1)) - result;
+                result = result - map.get(s.charAt(i));
             }
         }
-
         return result;
     }
 
