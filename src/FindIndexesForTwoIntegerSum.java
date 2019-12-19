@@ -2,12 +2,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class IntegerSum {
+//Given nums = [2, 7, 11, 15], target = 9
 
-    //Given nums = [2, 7, 11, 15], target = 9
+//Because nums[0] + nums[1] = 2 + 7 = 9,
+//return [0, 1].
 
-    //Because nums[0] + nums[1] = 2 + 7 = 9,
-    //return [0, 1].
+public class FindIndexesForTwoIntegerSum {
 
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap();
@@ -30,7 +30,7 @@ public class IntegerSum {
 
     public static void main(String[] args) {
         int a[] = {2, 7, 11, 15}; int target=9;
-        System.out.println(Arrays.toString(new IntegerSum().twoSum(a, target)));
+        System.out.println(Arrays.toString(new FindIndexesForTwoIntegerSum().twoSum(a, target)));
     }
 
 }
