@@ -4,7 +4,7 @@ import java.util.Stack;
 public class ValidParentheses {
     public static void main(String[] args) {
         ValidParentheses parentheses = new ValidParentheses();
-//        System.out.println(parentheses.isValid("{[]}"));
+        System.out.println(parentheses.isValid("{[]}"));
         System.out.println(parentheses.isValid("}{[]"));
     }
 /*  Input: "()[]{}"

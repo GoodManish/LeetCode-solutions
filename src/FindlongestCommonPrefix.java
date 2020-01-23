@@ -8,12 +8,6 @@ class FindlongestCommonPrefix {
 
     public String longestCommonPrefix(String[] strs) {
 
-//        int minValue = strs[0].length();
-//        for (int k = 1; k < strs.length; k++) {
-//            if (strs[k].length() < minValue) {
-//                minValue = strs[k].length();
-//            }
-//        }
         String commonPrefix = "";
         if (strs.length > 0) {
             commonPrefix = strs[0];

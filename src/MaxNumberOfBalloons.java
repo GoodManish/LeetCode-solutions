@@ -20,7 +20,7 @@ class MaxNumberOfBalloons {
 
     public static void main(String[] args) {
         MaxNumberOfBalloons mx = new MaxNumberOfBalloons();
-        System.out.println(mx.maxNumberOfBalloons("nlaebolko"));
+        System.out.println(mx.maxNumberOfBalloons("nlaebolkobb"));
         System.out.println(mx.maxNumberOfBalloons("loonbalxballpoon"));
         System.out.println(mx.maxNumberOfBalloons("leetcode"));
         System.out.println(mx.maxNumberOfBalloons("lloo"));
